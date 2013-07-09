@@ -1,0 +1,78 @@
+body {
+  padding: 5px;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00b7ff;
+  text-decoration: none;
+}
+.container {
+  max-width: 970px;
+  position: absolute;
+  overflow-y: auto;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  padding: 5px;
+  border: 1px solid;
+  border-radius: 5px;
+  margin: auto;
+}
+.clear {
+  clear: both;
+}
+.content {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 5px;
+  right: 5px;
+}
+.content header {
+  text-align: right;
+}
+.content header h2 {
+  text-align: left;
+  display: inline;
+  float: left;
+  margin: 0px;
+}
+.content header span,
+.content header input {
+  margin-left: 2px;
+  display: inline;
+}
+.content form {
+  display: inline;
+}
+.registro * {
+  display: block;
+}
+textarea {
+  width: 96%;
+  height: 75%;
+  resize: vertical;
+}
+.simplePagerNav li {
+  display: inline;
+  border: 1px solid #008000;
+  border-radius: 5px;
+  padding: 4px;
+  margin: 2px;
+}
+.textcoment {
+  height: 75px;
+}
+p.comentario {
+  display: block;
+  margin-bottom: 1px solid #808080;
+}
+.post {
+  border-top: 1px solid #808080;
+  border-bottom: 1px solid #808080;
+}
+pre {
+  background-color: #393939;
+  color: #f2f2f2;
+}

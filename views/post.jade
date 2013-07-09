@@ -1,0 +1,45 @@
+extends layout
+
+
+block content
+    h1=post.title
+    h3 Creador:
+        a(href='/user/'+post.name)=post.name
+    date Fecha: #{new Date(post.date)}
+    p visitas: #{post.visitas++}
+    .post=post.post
+    .comentarios
+        if (post.comentarios.length==0)
+            h3 No hay comentarios
+        else
+            h3 Comentarios:
+            each i in post.comentarios
+                p.comentario
+                    a(href='/user/'+post.name)=i.name
+                    | :
+                    span=' '+i.coment
+    script
+        srt=$(".post").html();
+        console.log(srt);
+        var a="cido[c123ode]".indexOf("[code");
+        console.log(a);
+        while (
+            srt.indexOf("[code]") != -1 ||
+            srt.indexOf("[CODE]") != -1 ||
+            srt.indexOf("[/code]") != -1 ||
+            srt.indexOf("[/CODE]") != -1
+        ){
+            srt=srt.replace(/\[code\]/,'<pre>');
+            srt=srt.replace(/\[CODE\]/,'<pre>');
+            srt=srt.replace(/\[\/code\]/,'</pre>');
+            srt=srt.replace(/\[\/CODE\]/,'</pre>');
+            //i++
+        }
+        console.log(srt);
+        $(".post").html(srt);
+    if (typeof(iniciado)!='undefined' && iniciado)
+        form(action='/post/'+post._id+'/'+post.title,method='post')
+            textarea.textcoment(name='comentario',required,maxlength=450)
+            button(type='submit') Enviar comentario
+    else
+        h3 Para comentar hay que registrarse o ingresar

@@ -1,0 +1,17 @@
+extends layout
+
+block content
+	h1=data.name
+	h4=data.mail
+	if data.posts.length>0
+		h5 Posts:
+		ul
+			each i in data.posts
+				li
+					a(href='/post/'+i._id+'/'+i.title)=i.title+' '
+					-var dat=new Date(i.date).toISOString();
+					time.timeago(datetime=dat)=dat
+		script
+			$('time.timeago').timeago();
+	else
+		h5 El usuario no tiene post creados.

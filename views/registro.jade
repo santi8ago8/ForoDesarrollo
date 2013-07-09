@@ -1,0 +1,13 @@
+//registro
+extends layout
+
+block content
+    h1 Registro:
+    if (typeof(mensaje)!='undefined' && mensaje)
+        p=mensaje
+    .registro
+        form(method='post',action='/registrar')
+            input(type='text',name="usuario",placeholder='usuario',required)
+            input(type='password',name="password",placeholder='contraseña',required)
+            input(type='text',name="email",placeholder='Email',required)
+            button(type="submit") Registrar
